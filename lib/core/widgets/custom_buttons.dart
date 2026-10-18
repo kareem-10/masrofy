@@ -11,6 +11,7 @@ class CustomButton extends StatelessWidget {
   final double? width;
   final double? height;
   final Widget? icon;
+  final TextStyle? textStyle;
   final bool isDisabled;
 
   const CustomButton({
@@ -23,6 +24,7 @@ class CustomButton extends StatelessWidget {
     this.height,
     this.icon,
     this.isDisabled = false,
+    this.textStyle,
   });
 
   @override
@@ -105,7 +107,7 @@ class CustomButton extends StatelessWidget {
       mainAxisSize: MainAxisSize.min,
       children: [
         if (icon != null) ...[icon!, SizedBox(width: AppSizes.s)],
-        Text(text),
+        Text(text, style: textStyle),
       ],
     );
   }
